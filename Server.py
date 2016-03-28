@@ -138,6 +138,9 @@ class JudgeHandler(WebSocketHandler):
             JudgeHandler.chal_running_count += 1
             IOLoop.instance().add_callback(JudgeHandler.start_chal, *chal)
 
+    def check_origin(self, origin):
+        return True
+
     def open(self):
         '''Handle open event'''
 
